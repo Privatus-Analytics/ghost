@@ -1,0 +1,30 @@
+{
+  "name": "@privatus-analytics/ghost",
+  "version": "1.0.0",
+  "description": "Cookieless Privatus Analytics for Ghost sites: a code injection snippet with member events, and a daily report from the API",
+  "license": "MIT",
+  "author": "Two Phase LLC <hello@privatusanalytics.com>",
+  "homepage": "https://privatusanalytics.com/docs/install/ghost",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Privatus-Analytics/ghost.git"
+  },
+  "bugs": "https://github.com/Privatus-Analytics/ghost/issues",
+  "keywords": ["ghost", "analytics", "privacy", "cookieless", "newsletter", "privatus"],
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "privatus-ghost": "bin/privatus-ghost.js"
+  },
+  "files": ["src", "bin", "README.md", "LICENSE"],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "test:e2e": "sh test/e2e/run.sh"
+  }
+}
