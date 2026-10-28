@@ -63,7 +63,7 @@ await page.route('https://privatusstats.com/js/pa.js', (route) =>
 await page.route('**/members/api/send-magic-link/**', (route) => route.fulfill({ status: 201, body: '{}' }))
 
 async function calls(url) {
-  await page.goto(url, { waitUntil: 'networkidle' })
+  await page.goto(url, { waitUntil: 'load', timeout: 60000 })
   await page.waitForFunction(() => Array.isArray(window.__calls))
   return page.evaluate(() => ({ site: window.__site, calls: window.__calls }))
 }
